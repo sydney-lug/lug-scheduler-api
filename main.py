@@ -10,6 +10,7 @@ def home():
 @app.route('/generate-game-slots', methods=['POST'])
 def generate_game_slots():
     data = request.get_json(force=True)
+    print("🔍 Received JSON:", data)  # <-- Add this line
 
     # Detect if data is a single booking or a list of bookings
     if isinstance(data.get('bookings'), list):

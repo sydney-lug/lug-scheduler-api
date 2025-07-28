@@ -10,6 +10,7 @@ def home():
 @app.route('/generate-game-slots', methods=['POST'])
 def generate_game_slots():
     data = request.json
+    print("Received data:", data, file=sys.stderr)  # <- log raw data
     game_duration = int(data.get('default_game_duration', 60))  # in minutes
     bookings = data.get('bookings', [])
 
